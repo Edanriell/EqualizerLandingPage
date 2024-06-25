@@ -1,1 +1,38 @@
-<ul></ul>
+---
+import { Image } from "astro:assets";
+
+import facebookIcon from "@public/icons/facebook.svg";
+import instagramIcon from "@public/icons/instagram.svg";
+import twitterIcon from "@public/icons/twitter.svg";
+---
+
+<ul class="social-links">
+	<li>
+		<a href="#">
+			<span class="visually-hidden">Link to facebook profile</span>
+			<Image src={facebookIcon} alt="Facebook logotype icon." />
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="visually-hidden">Link to instagram profile</span>
+			<Image src={instagramIcon} alt="Instagram logotype icon." />
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<span class="visually-hidden">Link to twitter profile</span>
+			<Image src={twitterIcon} alt="Twitter logotype icon." />
+		</a>
+	</li>
+</ul>
+
+<style>
+	.social-links {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 2rem;
+		list-style: none;
+	}
+</style>
