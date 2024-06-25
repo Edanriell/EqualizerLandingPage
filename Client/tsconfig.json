@@ -8,7 +8,8 @@
 			"@entities/*": ["entities/*"],
 			"@pages/*": ["pages-astro/*"],
 			"@widgets/*": ["widgets/*"],
-			"@shared/*": ["shared/*"]
+			"@shared/*": ["shared/*"],
+			"@public/*": ["../public/*"]
 		}
 	}
 }
