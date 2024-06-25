@@ -1,4 +1,40 @@
 ---
+import { Logotype, SocialLinks } from "@shared/ui";
 ---
 
-<footer></footer>
+<footer class="footer">
+	<Logotype />
+	<div class="footer__content">
+		<p class="footer__text">All rights reserved © Equalizer 2021 Have any problems? Contact us via social media or email us at <a class="footer__mail-link" href="mailto:equalizer@example.com"><b>equalizer@example.com</b></a></p>
+		<SocialLinks />
+	</div>
+</footer>
+
+<style>
+	.footer {
+		margin-top: 6.4rem;
+		padding: 0 2.4rem 8rem 2.4rem;
+	}
+
+	.footer__content {
+		display: flex;
+		flex-direction: column;
+		row-gap: 6.4rem;
+	}
+
+	.footer__text {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 400;
+		font-size: 1.6rem;
+		line-height: 162%;
+		color: var(--coarse-wool);
+		text-align: left;
+		margin-top: 3.2rem;
+		margin-right: 3.1rem;
+	}
+
+	.footer__mail-link {
+		text-decoration: none;
+		color: var(--coarse-wool);
+	}
+</style>
