@@ -14,12 +14,39 @@ import { Logotype, SocialLinks } from "@shared/ui";
 	.footer {
 		margin-top: 6.4rem;
 		padding: 0 2.4rem 8rem 2.4rem;
+
+		@media (width >= 768px) {
+			margin-top: 8.7rem;
+			padding: 0 3.9rem 8.5rem 3.9rem;
+		}
+
+		@media (width >= 1440px) {
+			margin-top: 8.7rem;
+			padding: 0 16.5rem 9.1rem 16.5rem;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+		}
 	}
 
 	.footer__content {
 		display: flex;
 		flex-direction: column;
 		row-gap: 6.4rem;
+
+		@media (width >= 768px) {
+			flex-direction: row;
+			row-gap: unset;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 3.2rem;
+		}
+
+		@media (width >= 1440px) {
+			margin-top: unset;
+			margin-left: 13.7rem;
+			flex: 1 1;
+		}
 	}
 
 	.footer__text {
@@ -31,6 +58,12 @@ import { Logotype, SocialLinks } from "@shared/ui";
 		text-align: left;
 		margin-top: 3.2rem;
 		margin-right: 3.1rem;
+
+		@media (width >= 768px) {
+			max-width: 36.6rem;
+			margin-right: unset;
+			margin-top: unset;
+		}
 	}
 
 	.footer__mail-link {
