@@ -1,24 +1,24 @@
 {
-  "name": "client",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "start:dev": "astro dev",
-    "start:start": "astro dev",
-    "start:build": "astro check && astro build",
-    "start:preview": "astro preview",
-    "start:astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^3.1.2",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
-    "astro": "^4.11.1",
-    "gsap": "^3.12.5",
-    "less": "^4.2.0",
-    "prettier": "^3.3.2",
-    "sanitize.css": "^13.0.0",
-    "typescript": "^5.5.2"
-  }
+	"name": "client",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"start:dev": "astro dev",
+		"start:start": "astro dev",
+		"start:build": "astro check && astro build",
+		"start:preview": "astro preview",
+		"start:astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.7.0",
+		"@astrojs/mdx": "^3.1.2",
+		"@astrojs/rss": "^4.0.7",
+		"@astrojs/sitemap": "^3.1.6",
+		"astro": "^4.11.1",
+		"gsap": "^3.12.5",
+		"less": "^4.2.0",
+		"prettier": "^3.3.2",
+		"sanitize.css": "^13.0.0",
+		"typescript": "^5.5.2"
+	}
 }
