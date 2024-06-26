@@ -1,3 +1,63 @@
-<section>
-	<h2>Hero Section</h2>
+<section class="hero">
+	<h2 class="hero__title">We make your music sound extraordinary.</h2>
+	<p class="hero__text">A system audio equalizer specifically designed for Android and iOS. Freely tune the way your music sounds with a professional grade parametric EQ & volume mixer. Control bass, mids, treble, gain control, reverb, and more!</p>
 </section>
+
+<style>
+	.hero {
+		padding: 2.2rem 2.4rem 6.8rem 2.4rem;
+
+		@media (width >= 768px) {
+			padding: 2.3rem 3.9rem 11.1rem 3.9rem;
+		}
+
+		@media (width >= 1440px) {
+			padding: 5.1rem 16.5rem 10.8rem 16.5rem;
+		}
+	}
+
+	.hero__title {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 4rem;
+		line-height: 120%;
+		letter-spacing: -0.01em;
+		color: var(--coarse-wool);
+		margin-bottom: 1.8rem;
+		text-align: left;
+
+		@media (width >= 768px) {
+			font-size: 6.4rem;
+			line-height: 100%;
+			max-width: 52rem;
+		}
+
+		@media (width >= 1440px) {
+			font-size: 8.8rem;
+			line-height: 100%;
+			max-width: 101.5rem;
+			margin-bottom: 2.7rem;
+		}
+	}
+
+	.hero__text {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 400;
+		font-size: 1.6rem;
+		line-height: 162%;
+		color: var(--coarse-wool);
+		text-align: left;
+
+		@media (width >= 768px) {
+			font-size: 1.8rem;
+			line-height: 156%;
+			max-width: 51rem;
+		}
+
+		@media (width >= 1440px) {
+			font-size: 2rem;
+			line-height: 170%;
+			max-width: 82.5rem;
+		}
+	}
+</style>
