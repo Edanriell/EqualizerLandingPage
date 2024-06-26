@@ -1,3 +1,132 @@
-<section>
-	<h2>Offer Section</h2>
+---
+import { Image } from "astro:assets";
+
+import coralRectangleFigure from "@public/images/svg/figures/coral-rectangle.svg"
+import coralRectangleH210Figure from "@public/images/svg/figures/coral-rectangle-h210.svg"
+import yellowCircleFigure from "@public/images/svg/figures/yellow-circle.svg"
+import snowCirclesFigure from "@public/images/svg/figures/snow-circles.svg"
+import snowCircleFigure from "@public/images/svg/figures/snow-circle.svg"
+import snowCircleLargeFigure from "@public/images/svg/figures/snow-circle-large.svg"
+import coralRectangleH234LargeFigure from "@public/images/svg/figures/coral-rectangle-h234.svg"
+import yellowCircleLargeFigure from "@public/images/svg/figures/yellow-circle-large.svg"
+import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-large.svg"
+
+---
+
+<section class="offer">
+	<div class="offer__secondary-content">
+		<picture>
+			<source type="image/jpeg" srcset="" media="(min-width: 768px)">
+			<source type="image/jpeg" srcset="" media="(min-width: 375px)">
+			<img class="offer__smartphone-image" src="" alt="Image of smartphone">
+		</picture>
+		<Image class="offer__coral-rectangle" src={ coralRectangleFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ coralRectangleH210Figure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ yellowCircleFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ snowCirclesFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ snowCircleFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ snowCircleLargeFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ coralRectangleH234LargeFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ yellowCircleLargeFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle" src={ snowCirclesLargeFigure } alt="CoralRectangle Figure"/>
+	</div>
+	<div class="offer__main-content">
+		<h2 class="offer__title">Premium EQ</h2>
+		<p class="offer__text">Get expert-level control with a robust equalizer, volume mixer, and spatial audio. Take your listening experience to a whole new level and access all our incredible features!</p>
+		<p class="offer__price-container">
+			<strong class="offer__price">$4</strong>
+			<small class="offer__month">/ month</small>
+		</p>
+		<button class="offer__button-dark" type="button">iOS Download</button>
+		<button class="offer__button-light" type="button">Android Download</button>
+	</div>
 </section>
+
+<style>
+	.offer {
+
+	}
+
+	.offer__secondary-content {
+		position: relative;
+		border-radius: 1.2rem;
+		height: 60rem;
+		background: var(--coarse-wool);
+	}
+
+	.offer__smartphone-image {
+
+	}
+
+	.offer__coral-rectangle {
+		display: block;
+	}
+
+	.offer__main-content {
+		border-radius: 1.2rem;
+		background: var(--fresh-salmon);
+	}
+
+	.offer__title {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 3.2rem;
+		line-height: 125%;
+		color: var(--cool-december);
+	}
+
+	.offer__text {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 400;
+		font-size: 1.8rem;
+		line-height: 156%;
+		color: var(--cool-december);
+	}
+
+	.offer__price-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.offer__price {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 6.5rem;
+		line-height: 80%;
+		color: var(--cool-december);
+	}
+
+	.offer__month {
+		font-family: var(--font-family), sans-serif;
+		font-weight: 400;
+		font-size: 2rem;
+		line-height: 160%;
+		letter-spacing: -0.01em;
+		color: var(--cool-december);
+	}
+
+	.offer__button-dark {
+		border-radius: 1.2rem;
+		background: var(--coarse-wool);
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 1.8rem;
+		line-height: 178%;
+		letter-spacing: -0.01em;
+		text-align: center;
+		color: var(--cool-december);
+	}
+
+	.offer__button-light {
+		border-radius: 1.2rem;
+		background: var(--cool-december);
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 1.8rem;
+		line-height: 178%;
+		letter-spacing: -0.01em;
+		text-align: center;
+		color: var(--coarse-wool);
+	}
+</style>
