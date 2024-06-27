@@ -15,17 +15,19 @@ import androidIcon from "@public/icons/android.svg";
 
 <section class="offer">
 	<div class="offer__secondary-content">
-		<picture>
-			<source type="image/png" srcset={ mobileImageLg.src } media="(min-width: 1440px)">
-			<source type="image/png" srcset={ mobileImageMd.src } media="(min-width: 768px)">
-			<source type="image/png" srcset={ mobileImageSm.src } media="(min-width: 375px)">
-			<img class="offer__smartphone-image" src={ mobileImageSm.src } alt="Image of smartphone">
-		</picture>
-		<Image class="offer__coral-rectangle-small" src={ coralRectangleSmallFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle-big" src={ coralRectangleBigFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__yellow-circle" src={ yellowCircleFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__snow-circles" src={ snowCirclesFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__snow-circle" src={ snowCircleFigure } alt="CoralRectangle Figure"/>
+		<div class="offer__smartphone-image-wrapper">
+			<picture>
+				<source type="image/png" srcset={ mobileImageLg.src } media="(min-width: 1440px)">
+				<source type="image/png" srcset={ mobileImageMd.src } media="(min-width: 768px)">
+				<source type="image/png" srcset={ mobileImageSm.src } media="(min-width: 375px)">
+				<img class="offer__smartphone-image" src={ mobileImageSm.src } alt="Image of smartphone">
+			</picture>
+			<Image class="offer__coral-rectangle-small" src={ coralRectangleSmallFigure } alt="CoralRectangle Figure"/>
+			<Image class="offer__coral-rectangle-big" src={ coralRectangleBigFigure } alt="CoralRectangle Figure"/>
+			<Image class="offer__yellow-circle" src={ yellowCircleFigure } alt="CoralRectangle Figure"/>
+			<Image class="offer__snow-circles" src={ snowCirclesFigure } alt="CoralRectangle Figure"/>
+			<Image class="offer__snow-circle" src={ snowCircleFigure } alt="CoralRectangle Figure"/>
+		</div>
 	</div>
 	<div class="offer__main-content">
 		<h2 class="offer__title">Premium EQ</h2>
@@ -60,6 +62,10 @@ import androidIcon from "@public/icons/android.svg";
 		z-index: 1;
 	}
 
+	.offer__smartphone-image-wrapper {
+		position: relative;
+	}
+
 	.offer__smartphone-image {
 		position: relative;
 		z-index: 2;
@@ -71,7 +77,7 @@ import androidIcon from "@public/icons/android.svg";
 		height: 14rem;
 		position: absolute;
 		top: 0;
-		left: 4.8rem;
+		left: -3.3rem;
 		z-index: 1;
 
 		@media (width >= 768px) {
@@ -84,7 +90,7 @@ import androidIcon from "@public/icons/android.svg";
 		height: 21rem;
 		position: absolute;
 		top: 7rem;
-		left: 18.8rem;
+		left: 10.7rem;
 		z-index: 1;
 
 		@media (width >= 1440px) {
@@ -98,7 +104,7 @@ import androidIcon from "@public/icons/android.svg";
 		height: 14rem;
 		position: absolute;
 		top: 14rem;
-		left: 4.8rem;
+		left: -3.3rem;
 		z-index: 1;
 
 		@media (width >= 1440px) {
@@ -112,7 +118,7 @@ import androidIcon from "@public/icons/android.svg";
 		height: 14rem;
 		position: absolute;
 		top: 28rem;
-		left: 4.8rem;
+		left: -3.3rem;
 		z-index: 1;
 
 		@media (width >= 1440px) {
