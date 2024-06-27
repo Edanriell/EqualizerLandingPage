@@ -1,13 +1,6 @@
 ---
 import { Image } from "astro:assets";
 
-import oceanGreenCircleDecorationMobile from "@public/images/svg/decorations/ocean-green-circle-mobile.svg";
-import orangeCircleDecorationMobile from "@public/images/svg/decorations/orange-circle-mobile.svg";
-import oceanGreenCircleDecoration from "@public/images/svg/decorations/ocean-green-circle.svg";
-import orangeCircleDecoration from "@public/images/svg/decorations/orange-circle.svg";
-import oceanGreenCircleDecoration from "@public/images/svg/decorations/ocean-green-circle.svg";
-import orangeCircleDecoration from "@public/images/svg/decorations/orange-circle.svg";
-import darkOrangeCircleDecoration from "@public/images/svg/decorations/dark-orange-circle.svg";
 import figuresGroupDecoration from "@public/images/svg/decorations/figures-group.svg";
 
 import { BaseHead } from "@widgets/base-head";
@@ -24,14 +17,7 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<BaseHead title={title} description={description} />
 	<body class="body">
-		<!--<Image class="oceanGreenCircleDecorationMobile" src={ oceanGreenCircleDecorationMobile } alt=""/>-->
-		<!--<Image class="orangeCircleDecorationMobile" src={ orangeCircleDecorationMobile } alt=""/>-->
-		<!--<Image class="oceanGreenCircleDecoration" src={ oceanGreenCircleDecoration } alt="" />-->
-		<!--<Image class="orangeCircleDecoration" src={ orangeCircleDecoration } alt="" />-->
-		<!--<Image class="darkOrangeCircleDecoration" src={ darkOrangeCircleDecoration } alt="" />-->
 		<Image class="figuresGroupDecoration" src={ figuresGroupDecoration } alt="" />
-		<div class="oceanGreenCircleDecorationMobile"></div>
-		<div class="orangeCircleDecorationMobile"></div>
 		<div class="oceanGreenCircleDecoration"></div>
 		<div class="orangeCircleDecoration"></div>
 		<div class="darkOrangeCircleDecoration"></div>
@@ -45,7 +31,7 @@ const { title, description } = Astro.props;
 		background: var(--cool-december);
 	}
 
-	.oceanGreenCircleDecorationMobile {
+	.oceanGreenCircleDecoration {
 		position: absolute;
 		display: block;
 		top: -10.5rem;
@@ -54,44 +40,11 @@ const { title, description } = Astro.props;
 		width: 28.14rem;
 		height: 28.14rem;
 		border-radius: 100%;
-		background: #40fff6;
-		filter: blur(67.957px);
+		background: var(--bright-cyan);
+		filter: blur(6.8rem);
 		opacity: 0.282458;
 
 		@media (width >= 768px) {
-			display: none;
-		}
-	}
-
-	.orangeCircleDecorationMobile {
-		position: absolute;
-		display: block;
-		top: 9.46rem;
-		right: -6.6rem;
-		z-index: 1;
-		width: 28.14rem;
-		height: 28.14rem;
-		border-radius: 100%;
-		background: #ff9201;
-		filter: blur(67.957px);
-		opacity: 0.153178;
-
-		@media (width >= 768px) {
-			display: none;
-		}
-	}
-
-	.oceanGreenCircleDecoration {
-		display: none;
-		border-radius: 100%;
-		background: #40fff6;
-		filter: blur(67.957px);
-		z-index: 1;
-		opacity: 0.282458;
-
-		@media (width >= 768px) {
-			position: absolute;
-			display: block;
 			top: 4.1rem;
 			right: 3.9rem;
 			width: 38.4rem;
@@ -105,16 +58,19 @@ const { title, description } = Astro.props;
 	}
 
 	.orangeCircleDecoration {
-		display: none;
-		border-radius: 100%;
-		background: #ff9201;
-		filter: blur(67.957px);
+		position: absolute;
+		display: block;
+		top: 9.46rem;
+		right: -6.6rem;
 		z-index: 1;
+		width: 28.14rem;
+		height: 28.14rem;
+		border-radius: 100%;
+		background: var(--tangerine);
+		filter: blur(6.8rem);
 		opacity: 0.153178;
 
 		@media (width >= 768px) {
-			position: absolute;
-			display: block;
 			top: 31.2rem;
 			right: 3.9rem;
 			width: 38.4rem;
@@ -129,14 +85,14 @@ const { title, description } = Astro.props;
 
 	.darkOrangeCircleDecoration {
 		display: none;
+		position: absolute;
 		border-radius: 100%;
-		background: #ff7b40;
-		filter: blur(67.957px);
+		background: var(--precious-persimmon);
+		filter: blur(6.8rem);
 		z-index: 1;
 		opacity: 0.15;
 
 		@media (width >= 768px) {
-			position: absolute;
 			display: block;
 			top: -11.3rem;
 			left: -25.5rem;
@@ -153,9 +109,9 @@ const { title, description } = Astro.props;
 	.figuresGroupDecoration {
 		display: none;
 		z-index: 10;
+		position: absolute;
 
 		@media (width >= 768px) {
-			position: absolute;
 			display: block;
 			width: 26.667rem;
 			height: 40rem;
