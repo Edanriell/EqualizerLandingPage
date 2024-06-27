@@ -45,6 +45,7 @@ import androidIcon from "@public/icons/android.svg";
 			<span>Android Download</span>
 		</button>
 	</div>
+	<div class="darkOrangeCircleDecoration"></div>
 </section>
 
 <style>
@@ -344,6 +345,24 @@ import androidIcon from "@public/icons/android.svg";
 
 		@media (width >= 1440px) {
 			margin: unset;
+		}
+	}
+
+	.darkOrangeCircleDecoration {
+		display: none;
+		position: absolute;
+		border-radius: 100%;
+		background: var(--precious-persimmon);
+		filter: blur(6.8rem);
+		opacity: 0.15;
+		width: 38.4rem;
+		height: 38.4rem;
+		top: 40.2rem;
+		right: -2.7rem;
+		z-index: -1;
+
+		@media (width >= 1440px) {
+			display: block;
 		}
 	}
 </style>
