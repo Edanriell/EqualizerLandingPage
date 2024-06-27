@@ -1,34 +1,31 @@
 ---
 import { Image } from "astro:assets";
 
-import coralRectangleFigure from "@public/images/svg/figures/coral-rectangle.svg"
-import coralRectangleH210Figure from "@public/images/svg/figures/coral-rectangle-h210.svg"
-import yellowCircleFigure from "@public/images/svg/figures/yellow-circle.svg"
-import snowCirclesFigure from "@public/images/svg/figures/snow-circles.svg"
-import snowCircleFigure from "@public/images/svg/figures/snow-circle.svg"
-import snowCircleLargeFigure from "@public/images/svg/figures/snow-circle-large.svg"
-import coralRectangleH234LargeFigure from "@public/images/svg/figures/coral-rectangle-h234.svg"
-import yellowCircleLargeFigure from "@public/images/svg/figures/yellow-circle-large.svg"
-import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-large.svg"
-
+import coralRectangleSmallFigure from "@public/images/svg/figures/coral-rectangle-small.svg";
+import coralRectangleBigFigure from "@public/images/svg/figures/coral-rectangle-big.svg";
+import snowCircleFigure from "@public/images/svg/figures/snow-circle.svg";
+import yellowCircleFigure from "@public/images/svg/figures/yellow-circle.svg";
+import snowCirclesFigure from "@public/images/svg/figures/snow-circles.svg";
+import mobileImageSm from "@public/images/mobile-sm.png";
+import mobileImageMd from "@public/images/mobile-md.png";
+import mobileImageLg from "@public/images/mobile-lg.png";
+import appleIcon from "@public/icons/apple.svg";
+import androidIcon from "@public/icons/android.svg";
 ---
 
 <section class="offer">
 	<div class="offer__secondary-content">
 		<picture>
-			<source type="image/jpeg" srcset="" media="(min-width: 768px)">
-			<source type="image/jpeg" srcset="" media="(min-width: 375px)">
-			<img class="offer__smartphone-image" src="" alt="Image of smartphone">
+			<source type="image/png" srcset={ mobileImageLg.src } media="(min-width: 1440px)">
+			<source type="image/png" srcset={ mobileImageMd.src } media="(min-width: 768px)">
+			<source type="image/png" srcset={ mobileImageSm.src } media="(min-width: 375px)">
+			<img class="offer__smartphone-image" src={ mobileImageSm.src } alt="Image of smartphone">
 		</picture>
-		<Image class="offer__coral-rectangle" src={ coralRectangleFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ coralRectangleH210Figure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ yellowCircleFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ snowCirclesFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ snowCircleFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ snowCircleLargeFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ coralRectangleH234LargeFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ yellowCircleLargeFigure } alt="CoralRectangle Figure"/>
-		<Image class="offer__coral-rectangle" src={ snowCirclesLargeFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle-small" src={ coralRectangleSmallFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__coral-rectangle-big" src={ coralRectangleBigFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__yellow-circle" src={ yellowCircleFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__snow-circles" src={ snowCirclesFigure } alt="CoralRectangle Figure"/>
+		<Image class="offer__snow-circle" src={ snowCircleFigure } alt="CoralRectangle Figure"/>
 	</div>
 	<div class="offer__main-content">
 		<h2 class="offer__title">Premium EQ</h2>
@@ -37,8 +34,14 @@ import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-larg
 			<strong class="offer__price">$4</strong>
 			<small class="offer__month">/ month</small>
 		</p>
-		<button class="offer__button-dark" type="button">iOS Download</button>
-		<button class="offer__button-light" type="button">Android Download</button>
+		<button class="offer__button-dark" type="button">
+			<Image src={ appleIcon } alt="Apple company logotype"/>
+			<span>iOS Download</span>
+		</button>
+		<button class="offer__button-light" type="button">
+			<Image src={ androidIcon } alt="Android company logotype"/>
+			<span>Android Download</span>
+		</button>
 	</div>
 </section>
 
@@ -52,19 +55,98 @@ import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-larg
 		border-radius: 1.2rem;
 		height: 60rem;
 		background: var(--coarse-wool);
+		display: flex;
+		justify-content: center;
+		z-index: 1;
 	}
 
 	.offer__smartphone-image {
-
+		position: relative;
+		z-index: 2;
+		margin-top: -9.8rem;
 	}
 
-	.offer__coral-rectangle {
-		display: block;
+	.offer__coral-rectangle-small {
+		width: 7rem;
+		height: 14rem;
+		position: absolute;
+		top: 0;
+		left: 4.8rem;
+		z-index: 1;
+
+		@media (width >= 768px) {
+			display: none;
+		}
+	}
+
+	.offer__coral-rectangle-big {
+		width: 14rem;
+		height: 21rem;
+		position: absolute;
+		top: 7rem;
+		left: 18.8rem;
+		z-index: 1;
+
+		@media (width >= 1440px) {
+			width: 15.6rem;
+			height: 23.4rem;
+		}
+	}
+
+	.offer__yellow-circle {
+		width: 14rem;
+		height: 14rem;
+		position: absolute;
+		top: 14rem;
+		left: 4.8rem;
+		z-index: 1;
+
+		@media (width >= 1440px) {
+			width: 15.6rem;
+			height: 15.6rem;
+		}
+	}
+
+	.offer__snow-circles {
+		width: 14rem;
+		height: 14rem;
+		position: absolute;
+		top: 28rem;
+		left: 4.8rem;
+		z-index: 1;
+
+		@media (width >= 1440px) {
+			width: 15.6rem;
+			height: 15.6rem;
+		}
+	}
+
+	.offer__snow-circle {
+		width: 7rem;
+		height: 7rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		z-index: 1;
+
+		@media (width >= 768px) {
+			display: block;
+		}
+
+		@media (width >= 1440px) {
+			width: 7.8rem;
+			height: 7.8rem;
+		}
 	}
 
 	.offer__main-content {
+		position: relative;
 		border-radius: 1.2rem;
 		background: var(--fresh-salmon);
+		z-index: 2;
+		margin-top: -22rem;
+		padding: 4.8rem 3.6rem;
 	}
 
 	.offer__title {
@@ -73,6 +155,7 @@ import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-larg
 		font-size: 3.2rem;
 		line-height: 125%;
 		color: var(--cool-december);
+		margin-bottom: 1rem;
 	}
 
 	.offer__text {
@@ -81,12 +164,16 @@ import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-larg
 		font-size: 1.8rem;
 		line-height: 156%;
 		color: var(--cool-december);
+		margin-bottom: 3.6rem;
 	}
 
 	.offer__price-container {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		margin-bottom: 3.2rem;
+		column-gap: 1.6rem;
+		margin-left: 1.8rem;
 	}
 
 	.offer__price {
@@ -116,6 +203,16 @@ import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-larg
 		letter-spacing: -0.01em;
 		text-align: center;
 		color: var(--cool-december);
+		border: none;
+		cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		column-gap: 0.78rem;
+		padding: 1.5rem 0 1.4rem 0;
+		width: 100%;
+		margin: 0 1.3rem 1.6rem 1.8rem;
 	}
 
 	.offer__button-light {
@@ -128,5 +225,15 @@ import snowCirclesLargeFigure from "@public/images/svg/figures/snow-circles-larg
 		letter-spacing: -0.01em;
 		text-align: center;
 		color: var(--coarse-wool);
+		border: none;
+		cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 0.78rem;
+		padding: 1.5rem 0 1.4rem 0;
+		width: 100%;
+		justify-content: center;
+		margin: 0 1.3rem 0 1.8rem;
 	}
 </style>
