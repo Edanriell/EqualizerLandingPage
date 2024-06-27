@@ -1,4 +1,15 @@
 ---
+import { Image } from "astro:assets";
+
+import oceanGreenCircleDecorationMobile from "@public/images/svg/decorations/ocean-green-circle-mobile.svg";
+import orangeCircleDecorationMobile from "@public/images/svg/decorations/orange-circle-mobile.svg";
+import oceanGreenCircleDecoration from "@public/images/svg/decorations/ocean-green-circle.svg";
+import orangeCircleDecoration from "@public/images/svg/decorations/orange-circle.svg";
+import oceanGreenCircleDecoration from "@public/images/svg/decorations/ocean-green-circle.svg";
+import orangeCircleDecoration from "@public/images/svg/decorations/orange-circle.svg";
+import darkOrangeCircleDecoration from "@public/images/svg/decorations/dark-orange-circle.svg";
+import figuresGroupDecoration from "@public/images/svg/decorations/figures-group.svg";
+
 import { BaseHead } from "@widgets/base-head";
 
 interface Props {
@@ -13,12 +24,150 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<BaseHead title={title} description={description} />
 	<body class="body">
+		<!--<Image class="oceanGreenCircleDecorationMobile" src={ oceanGreenCircleDecorationMobile } alt=""/>-->
+		<!--<Image class="orangeCircleDecorationMobile" src={ orangeCircleDecorationMobile } alt=""/>-->
+		<!--<Image class="oceanGreenCircleDecoration" src={ oceanGreenCircleDecoration } alt="" />-->
+		<!--<Image class="orangeCircleDecoration" src={ orangeCircleDecoration } alt="" />-->
+		<!--<Image class="darkOrangeCircleDecoration" src={ darkOrangeCircleDecoration } alt="" />-->
+		<Image class="figuresGroupDecoration" src={ figuresGroupDecoration } alt="" />
+		<div class="oceanGreenCircleDecorationMobile"></div>
+		<div class="orangeCircleDecorationMobile"></div>
+		<div class="oceanGreenCircleDecoration"></div>
+		<div class="orangeCircleDecoration"></div>
+		<div class="darkOrangeCircleDecoration"></div>
 		<slot />
 	</body>
 </html>
 
 <style>
 	.body {
+		position: relative;
 		background: var(--cool-december);
+	}
+
+	.oceanGreenCircleDecorationMobile {
+		position: absolute;
+		display: block;
+		top: -10.5rem;
+		right: -6.6rem;
+		z-index: 1;
+		width: 28.14rem;
+		height: 28.14rem;
+		border-radius: 100%;
+		background: #40fff6;
+		filter: blur(135px);
+		opacity: 0.7;
+
+		@media (width >= 768px) {
+			display: none;
+		}
+	}
+
+	.orangeCircleDecorationMobile {
+		position: absolute;
+		display: block;
+		top: 9.46rem;
+		right: -6.6rem;
+		z-index: 1;
+		width: 28.14rem;
+		height: 28.14rem;
+		border-radius: 100%;
+		background: #ff9201;
+		filter: blur(135px);
+		opacity: 0.6;
+
+		@media (width >= 768px) {
+			display: none;
+		}
+	}
+
+	.oceanGreenCircleDecoration {
+		display: none;
+		border-radius: 100%;
+		background: #40fff6;
+		filter: blur(135px);
+		z-index: 1;
+		opacity: 0.282458;
+
+		@media (width >= 768px) {
+			position: absolute;
+			display: block;
+			top: 4.1rem;
+			right: 3.9rem;
+			width: 38.4rem;
+			height: 38.4rem;
+		}
+
+		@media (width >= 1440px) {
+			top: 10rem;
+			right: 15.5rem;
+		}
+	}
+
+	.orangeCircleDecoration {
+		display: none;
+		border-radius: 100%;
+		background: #ff9201;
+		filter: blur(135px);
+		z-index: 1;
+		opacity: 0.153178;
+
+		@media (width >= 768px) {
+			position: absolute;
+			display: block;
+			top: 31.2rem;
+			right: 3.9rem;
+			width: 38.4rem;
+			height: 38.4rem;
+		}
+
+		@media (width >= 1440px) {
+			top: 37.15rem;
+			right: 15.5rem;
+		}
+	}
+
+	.darkOrangeCircleDecoration {
+		display: none;
+		border-radius: 100%;
+		background: #ff7b40;
+		filter: blur(135px);
+		z-index: 1;
+		opacity: 0.15;
+
+		@media (width >= 768px) {
+			position: absolute;
+			display: block;
+			top: -11.3rem;
+			left: -25.5rem;
+			width: 38.4rem;
+			height: 38.4rem;
+		}
+
+		@media (width >= 1440px) {
+			top: -11.3rem;
+			left: -14.6rem;
+		}
+	}
+
+	.figuresGroupDecoration {
+		display: none;
+		z-index: 10;
+
+		@media (width >= 768px) {
+			position: absolute;
+			display: block;
+			width: 26.667rem;
+			height: 40rem;
+			top: -3.2rem;
+			right: -3.6rem;
+		}
+
+		@media (width >= 1440px) {
+			width: 31.2rem;
+			height: 46.8rem;
+			top: -4rem;
+			right: 0;
+		}
 	}
 </style>
