@@ -16,7 +16,82 @@ const link = cva("link", {
 const { linkStyle = "light", href = "", style = "" }: LinkProps = Astro.props;
 ---
 
-<a href={ href } style={ style } class={ link({ linkStyle }) }>
+<script>
+	import gsap from "gsap";
+
+	const linkElements = document.querySelectorAll("[data-link]");
+
+	linkElements.forEach(linkElement => {
+		linkElement!.addEventListener("mouseup", (event:Event) => handleLinkMouseUp(event));
+		linkElement!.addEventListener("mousedown", (event:Event) => handleLinkMouseDown(event));
+		linkElement!.addEventListener("mouseenter", (event:Event) => handleLinkMouseEnter(event));
+		linkElement!.addEventListener("mouseleave", (event:Event) => handleLinkMouseLeave(event));
+		linkElement!.addEventListener("touchstart", (event:Event) => handleLinkTouchStart(event));
+		linkElement!.addEventListener("touchend", (event:Event) => handleLinkTouchEnd(event));
+	});
+
+	const handleLinkMouseUp = (event: Event) => {
+		gsap.to(event.target, {
+			scale: 1.05,
+			duration: 0.25,
+			ease: "power1"
+		});
+	};
+
+	const handleLinkMouseDown = (event: Event) => {
+		gsap.to(event.target, {
+			scale: 0.95,
+			duration: 0.25,
+			ease: "power1"
+		});
+	};
+
+	const handleLinkMouseEnter  = (event: Event) => {
+		const linkStyle = event.target.getAttribute("linkstyle");
+
+		gsap.to(event.target, {
+			scale: 1.05,
+			background: linkStyle === "light" ? "#ffb964" : linkStyle === "dark" ? "#66e2dc" : "",
+			duration: 0.25,
+			ease: "power1"
+		});
+	};
+
+	const handleLinkMouseLeave  = (event: Event) => {
+		const linkStyle = event.target.getAttribute("linkstyle");
+
+		gsap.to(event.target, {
+			scale: 1,
+			background: linkStyle === "light" ? "#fcfaf9" : linkStyle === "dark" ? "#191826" : "",
+			duration: 0.25,
+			ease: "power1"
+		});
+	};
+
+	const handleLinkTouchStart = (event: Event) => {
+		const linkStyle = event.target.getAttribute("linkstyle");
+
+		gsap.to(event.target, {
+			scale: 0.95,
+			background: linkStyle === "light" ? "#ffb964" : linkStyle === "dark" ? "#66e2dc" : "",
+			duration: 0.25,
+			ease: "power1"
+		});
+	};
+
+	const handleLinkTouchEnd = (event: Event) => {
+		const linkStyle = event.target.getAttribute("linkstyle");
+
+		gsap.to(event.target, {
+			scale: 1.05,
+			background: linkStyle === "light" ? "#fcfaf9" : linkStyle === "dark" ? "#191826" : "",
+			duration: 0.25,
+			ease: "power1"
+		});
+	};
+</script>
+
+<a data-link { linkStyle } href={ href } style={ style } class={ link({ linkStyle }) }>
 	<slot />
 </a>
 
