@@ -1,0 +1,71 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
+
+type LinkProps = HTMLAttributes<"link"> & VariantProps<typeof link>;
+
+const link = cva("link", {
+	variants: {
+		linkStyle: {
+			light: "link--style--light",
+			dark: "link--style--dark"
+		}
+	}
+});
+
+const { linkStyle = "light", href = "", style = "" }: LinkProps = Astro.props;
+---
+
+<a href={ href } style={ style } class={ link({ linkStyle }) }>
+	<slot />
+</a>
+
+<style>
+	.link {
+		text-decoration: none;
+		border-radius: 1.2rem;
+		font-family: var(--font-family), sans-serif;
+		font-weight: 700;
+		font-size: 1.8rem;
+		line-height: 178%;
+		letter-spacing: -0.01em;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		column-gap: 0.792rem;
+		padding: 1.5rem 0 1.4rem 0;
+		width: 100%;
+	}
+
+	.link--style--dark {
+		background: var(--coarse-wool);
+		color: var(--cool-december);
+		margin: 0 1.3rem 0 1.8rem;
+
+		@media (width >= 768px) {
+			margin: 0 0.1rem 0 0.6rem;
+		}
+
+		@media (width >= 1440px) {
+			margin: unset;
+		}
+	}
+
+	.link--style--light {
+		background: var(--cool-december);
+		color: var(--coarse-wool);
+		margin: 0 1.3rem 0 1.8rem;
+
+		@media (width >= 768px) {
+			margin: 0 0.1rem 0 0.6rem;
+		}
+
+		@media (width >= 1440px) {
+			margin: unset;
+		}
+	}
+</style>
