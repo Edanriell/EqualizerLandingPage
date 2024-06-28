@@ -11,6 +11,8 @@ import mobileImageMd from "@public/images/mobile-md.png";
 import mobileImageLg from "@public/images/mobile-lg.png";
 import appleIcon from "@public/icons/apple.svg";
 import androidIcon from "@public/icons/android.svg";
+
+import { Link } from "@shared/ui";
 ---
 
 <section class="offer">
@@ -36,19 +38,23 @@ import androidIcon from "@public/icons/android.svg";
 			<strong class="offer__price">$4</strong>
 			<small class="offer__month">/ month</small>
 		</p>
-		<button class="offer__button-dark" type="button">
+		<Link style="margin-bottom: 1.6rem;" href="#" linkStyle="dark">
 			<Image src={ appleIcon } alt="Apple company logotype"/>
 			<span>iOS Download</span>
-		</button>
-		<button class="offer__button-light" type="button">
+		</Link>
+		<Link href="#" linkStyle="light">
 			<Image src={ androidIcon } alt="Android company logotype"/>
 			<span>Android Download</span>
-		</button>
+		</Link>
 	</div>
 	<div class="darkOrangeCircleDecoration"></div>
 </section>
 
 <style>
+	.test {
+		margin-bottom: 200px;
+	}
+
 	.offer {
 		position: relative;
 
@@ -286,66 +292,6 @@ import androidIcon from "@public/icons/android.svg";
 		line-height: 160%;
 		letter-spacing: -0.01em;
 		color: var(--cool-december);
-	}
-
-	.offer__button-dark {
-		border-radius: 1.2rem;
-		background: var(--coarse-wool);
-		font-family: var(--font-family), sans-serif;
-		font-weight: 700;
-		font-size: 1.8rem;
-		line-height: 178%;
-		letter-spacing: -0.01em;
-		text-align: center;
-		color: var(--cool-december);
-		border: none;
-		cursor: pointer;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		column-gap: 0.792rem;
-		padding: 1.5rem 0 1.4rem 0;
-		width: 100%;
-		margin: 0 1.3rem 1.6rem 1.8rem;
-
-		@media (width >= 768px) {
-			margin: 0 0.1rem 1.6rem 0.6rem;
-		}
-
-		@media (width >= 1440px) {
-			margin: 0 0 1.6rem 0;
-		}
-	}
-
-	.offer__button-light {
-		border-radius: 1.2rem;
-		background: var(--cool-december);
-		font-family: var(--font-family), sans-serif;
-		font-weight: 700;
-		font-size: 1.8rem;
-		line-height: 178%;
-		letter-spacing: -0.01em;
-		text-align: center;
-		color: var(--coarse-wool);
-		border: none;
-		cursor: pointer;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		column-gap: 0.792rem;
-		padding: 1.5rem 0 1.4rem 0;
-		width: 100%;
-		justify-content: center;
-		margin: 0 1.3rem 0 1.8rem;
-
-		@media (width >= 768px) {
-			margin: 0 0.1rem 0 0.6rem;
-		}
-
-		@media (width >= 1440px) {
-			margin: unset;
-		}
 	}
 
 	.darkOrangeCircleDecoration {
