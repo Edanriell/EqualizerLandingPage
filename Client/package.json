@@ -1,7 +1,7 @@
 {
 	"name": "client",
 	"type": "module",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"author": "Edanriell",
 	"private": true,
 	"license": "MIT",
