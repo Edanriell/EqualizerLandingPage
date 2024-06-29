@@ -30,18 +30,26 @@
 		color: var(--coarse-wool);
 		margin-bottom: 1.8rem;
 		text-align: left;
+		margin-right: auto;
 
 		@media (width >= 768px) {
 			font-size: 6.4rem;
 			line-height: 100%;
-			max-width: 52rem;
+			// max-width: 52rem;
+			padding-right: 17rem;
 		}
 
 		@media (width >= 1440px) {
 			font-size: 8.8rem;
 			line-height: 100%;
 			max-width: 101.5rem;
+			padding-right: unset;
 			margin-bottom: 2.7rem;
+		}
+
+		@media (width >= 1921px) {
+			max-width: unset;
+			width: clamp(101.5rem, 100%, 200rem);
 		}
 	}
 
@@ -52,17 +60,25 @@
 		line-height: 162%;
 		color: var(--coarse-wool);
 		text-align: left;
+		margin-right: auto;
 
 		@media (width >= 768px) {
 			font-size: 1.8rem;
 			line-height: 156%;
-			max-width: 51rem;
+			// max-width: 51rem;
+			padding-right: 16rem;
 		}
 
 		@media (width >= 1440px) {
 			font-size: 2rem;
 			line-height: 170%;
 			max-width: 82.5rem;
+			padding-right: unset;
+		}
+
+		@media (width >= 1921px) {
+			max-width: unset;
+			width: clamp(82.5rem, 100%, 160rem);
 		}
 	}
 </style>
