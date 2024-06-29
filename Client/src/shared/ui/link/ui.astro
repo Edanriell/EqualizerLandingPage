@@ -47,7 +47,7 @@ const { linkStyle = "light", href = "", style = "" }: LinkProps = Astro.props;
 	};
 
 	const handleLinkMouseEnter  = (event: Event) => {
-		const linkStyle = event.target.getAttribute("linkstyle");
+		const linkStyle = (event.target as any).getAttribute("linkstyle");
 
 		gsap.to(event.target, {
 			scale: 1.05,
@@ -58,7 +58,7 @@ const { linkStyle = "light", href = "", style = "" }: LinkProps = Astro.props;
 	};
 
 	const handleLinkMouseLeave  = (event: Event) => {
-		const linkStyle = event.target.getAttribute("linkstyle");
+		const linkStyle = (event.target as any).getAttribute("linkstyle");
 
 		gsap.to(event.target, {
 			scale: 1,
@@ -69,7 +69,7 @@ const { linkStyle = "light", href = "", style = "" }: LinkProps = Astro.props;
 	};
 
 	const handleLinkTouchStart = (event: Event) => {
-		const linkStyle = event.target.getAttribute("linkstyle");
+		const linkStyle = (event.target as any).getAttribute("linkstyle");
 
 		gsap.to(event.target, {
 			scale: 0.95,
@@ -80,7 +80,7 @@ const { linkStyle = "light", href = "", style = "" }: LinkProps = Astro.props;
 	};
 
 	const handleLinkTouchEnd = (event: Event) => {
-		const linkStyle = event.target.getAttribute("linkstyle");
+		const linkStyle = (event.target as any).getAttribute("linkstyle");
 
 		gsap.to(event.target, {
 			scale: 1.05,
